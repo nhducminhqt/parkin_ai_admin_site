@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { login } from "../api/auth";
 import { LoginRequest, LoginResponse } from "../types/auth";
 import { logout } from "../api/logout";
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
   const [account, setAccount] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -19,6 +21,9 @@ const Login: React.FC = () => {
       const data: LoginRequest = { account, password };
       const res = await login(data);
       setUser(res);
+      setTimeout(() => {
+        navigate("/home");
+      }, 500);
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -75,56 +80,6 @@ const Login: React.FC = () => {
         </button>
         {error && <div style={{ color: "red", marginTop: 16 }}>{error}</div>}
       </form>
-      {user && (
-        <div
-          style={{
-            marginTop: 32,
-            background: "#f5f5f5",
-            padding: 16,
-            borderRadius: 8,
-          }}
-        >
-          <h3>Xin chào, {user.username}!</h3>
-          <p>Vai trò: {user.role}</p>
-          <p>Số dư ví: {user.wallet_balance}</p>
-          <button
-            style={{
-              marginTop: 16,
-              padding: 8,
-              background: "#d32f2f",
-              color: "#fff",
-              border: "none",
-              borderRadius: 4,
-            }}
-            onClick={async () => {
-              setLoading(true);
-              setLogoutMsg("");
-              try {
-                const res = await logout(user.access_token);
-                setLogoutMsg(res.message || "Đã đăng xuất thành công!");
-                setUser(null);
-              } catch (err: any) {
-                setLogoutMsg(err.message);
-              } finally {
-                setLoading(false);
-              }
-            }}
-            disabled={loading}
-          >
-            {loading ? "Đang đăng xuất..." : "Đăng xuất"}
-          </button>
-          {logoutMsg && (
-            <div
-              style={{
-                color: logoutMsg.includes("thành công") ? "green" : "red",
-                marginTop: 8,
-              }}
-            >
-              {logoutMsg}
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 };

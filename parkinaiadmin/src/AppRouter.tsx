@@ -9,6 +9,8 @@ import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Register from "./components/Register";
+import Home from "./components/Home";
+import AboutUs from "./components/AboutUs";
 
 const AppRouter: React.FC = () => (
   <Router>
@@ -17,6 +19,8 @@ const AppRouter: React.FC = () => (
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </div>

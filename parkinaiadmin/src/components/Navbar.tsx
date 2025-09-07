@@ -31,6 +31,18 @@ const Navbar: React.FC = () => {
       >
         Đăng ký
       </Link>
+      <Link
+        to="/about"
+        style={{
+          color: location.pathname === "/about" ? "#fff" : "#cfd8dc",
+          margin: "0 20px",
+          textDecoration: "none",
+          fontWeight: "bold",
+          fontSize: 18,
+        }}
+      >
+        Giới thiệu
+      </Link>
     </nav>
   );
 };
