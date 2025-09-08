@@ -21,6 +21,8 @@ const Login: React.FC = () => {
       const data: LoginRequest = { account, password };
       const res = await login(data);
       setUser(res);
+      // Lưu thông tin user vào localStorage
+      localStorage.setItem("user", JSON.stringify(res));
       setTimeout(() => {
         navigate("/home");
       }, 500);
