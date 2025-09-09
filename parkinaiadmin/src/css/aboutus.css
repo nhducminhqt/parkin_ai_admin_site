@@ -1,0 +1,31 @@
+/* About Us page styles */
+.aboutus-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #eee;
+}
+.aboutus-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.aboutus-section {
+  margin-bottom: 24px;
+}
+.aboutus-section h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.aboutus-section ul {
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+.aboutus-section b {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}

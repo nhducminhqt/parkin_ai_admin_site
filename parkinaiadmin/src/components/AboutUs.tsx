@@ -1,18 +1,12 @@
 import React from "react";
+import "../css/aboutus.css";
 
 const AboutUs: React.FC = () => (
-  <div
-    style={{
-      maxWidth: 800,
-      margin: "auto",
-      padding: 32,
-      background: "#fff",
-      borderRadius: 8,
-      boxShadow: "0 2px 8px #eee",
-    }}
-  >
-    <h2>Về dự án ParkIn.AI – Bãi đỗ thông minh, hành trình an tâm</h2>
-    <section style={{ marginBottom: 24 }}>
+  <div className="aboutus-container">
+    <h2 className="aboutus-title">
+      Về dự án ParkIn.AI – Bãi đỗ thông minh, hành trình an tâm
+    </h2>
+    <section className="aboutus-section">
       <h3>Đảm bảo tính đổi mới và ứng dụng công nghệ IT</h3>
       <ul>
         <li>
@@ -42,7 +36,7 @@ const AboutUs: React.FC = () => (
         </li>
       </ul>
     </section>
-    <section style={{ marginBottom: 24 }}>
+    <section className="aboutus-section">
       <h3>Pain Point – Vấn đề cần giải quyết</h3>
       <b>Người dùng cá nhân:</b>
       <ul>
@@ -75,7 +69,7 @@ const AboutUs: React.FC = () => (
         </li>
       </ul>
     </section>
-    <section style={{ marginBottom: 24 }}>
+    <section className="aboutus-section">
       <h3>USP – Điểm khác biệt và lợi thế cạnh tranh</h3>
       <ul>
         <li>

@@ -1,0 +1,38 @@
+/* Home page styles */
+.home-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+.home-sidebar {
+  width: 220px;
+  background: #222;
+  color: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.home-sidebar-title {
+  margin-bottom: 32px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.home-main {
+  flex: 1;
+  padding: 40px;
+}
+.home-error {
+  color: red;
+  margin-top: 16px;
+}
+.home-logout-btn {
+  margin-top: 24px;
+  padding: 8px 20px;
+  background: #00dcb5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}

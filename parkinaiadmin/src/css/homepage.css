@@ -1,0 +1,14 @@
+/* Homepage styles */
+.homepage-container {
+  padding: 40px 0;
+  text-align: center;
+}
+.homepage-title {
+  color: #005060;
+  font-size: 36px;
+  font-weight: 700;
+}
+.homepage-desc {
+  font-size: 20px;
+  margin-top: 16px;
+}

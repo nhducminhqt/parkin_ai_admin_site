@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../api/auth";
-import { LoginRequest, LoginResponse } from "../types/auth";
-import { logout } from "../api/logout";
+import { LoginRequest } from "../types/auth";
+import "../css/login.css";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -10,8 +10,6 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [user, setUser] = useState<LoginResponse | null>(null);
-  const [logoutMsg, setLogoutMsg] = useState<string>("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,7 +18,6 @@ const Login: React.FC = () => {
     try {
       const data: LoginRequest = { account, password };
       const res = await login(data);
-      setUser(res);
       // Lưu thông tin user vào localStorage
       localStorage.setItem("user", JSON.stringify(res));
       setTimeout(() => {
@@ -34,53 +31,33 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: 400,
-        margin: "auto",
-        padding: 32,
-        background: "#fff",
-        borderRadius: 8,
-        boxShadow: "0 2px 8px #eee",
-      }}
-    >
-      <h2>Parkin AI - Đăng nhập</h2>
+    <div className="login-container">
+      <h2 className="login-title">Parkin AI - Đăng nhập</h2>
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: 16 }}>
+        <div className="login-form-group">
           <label>Email:</label>
           <input
             type="email"
             value={account}
             onChange={(e) => setAccount(e.target.value)}
             required
-            style={{ width: "100%", padding: 8 }}
+            className="login-input"
           />
         </div>
-        <div style={{ marginBottom: 16 }}>
+        <div className="login-form-group">
           <label>Mật khẩu:</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            style={{ width: "100%", padding: 8 }}
+            className="login-input"
           />
         </div>
-        <button
-          type="submit"
-          disabled={loading}
-          style={{
-            width: "100%",
-            padding: 10,
-            background: "#1976d2",
-            color: "#fff",
-            border: "none",
-            borderRadius: 4,
-          }}
-        >
+        <button type="submit" disabled={loading} className="login-btn">
           {loading ? "Đang đăng nhập..." : "Đăng nhập"}
         </button>
-        {error && <div style={{ color: "red", marginTop: 16 }}>{error}</div>}
+        {error && <div className="login-error">{error}</div>}
       </form>
     </div>
   );

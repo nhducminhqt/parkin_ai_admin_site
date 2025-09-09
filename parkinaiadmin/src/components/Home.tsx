@@ -6,6 +6,7 @@ import AdminParkinOrder from "./AdminParkinOrder";
 import AdminServiceOrder from "./AdminServiceOrder";
 import AdminParkinLot from "./AdminParkinLot";
 import AdminDashboard from "./AdminDashboard";
+import "../css/home.css";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -44,84 +45,55 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh", background: "#f7f7f7" }}>
+    <div className="home-wrapper">
       {/* Sidebar */}
-      <div
-        style={{
-          width: 220,
-          background: "#222",
-          color: "#fff",
-          padding: 24,
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <h3 style={{ marginBottom: 32 }}>Quản lý Admin</h3>
+      <div className="home-sidebar">
+        <h3 className="home-sidebar-title">Quản lý Admin</h3>
         <button
+          className={selectedMenu === "dashboard" ? "home-logout-btn" : ""}
           style={{
             marginBottom: 16,
             background: selectedMenu === "dashboard" ? "#444" : "#333",
-            color: "#fff",
-            border: "none",
-            padding: "10px 16px",
-            borderRadius: 4,
-            cursor: "pointer",
           }}
           onClick={() => setSelectedMenu("dashboard")}
         >
           Dashboard
         </button>
         <button
+          className={selectedMenu === "user" ? "home-logout-btn" : ""}
           style={{
             marginBottom: 16,
             background: selectedMenu === "user" ? "#444" : "#333",
-            color: "#fff",
-            border: "none",
-            padding: "10px 16px",
-            borderRadius: 4,
-            cursor: "pointer",
           }}
           onClick={() => setSelectedMenu("user")}
         >
           User
         </button>
         <button
+          className={selectedMenu === "parkinOrder" ? "home-logout-btn" : ""}
           style={{
             marginBottom: 16,
             background: selectedMenu === "parkinOrder" ? "#444" : "#333",
-            color: "#fff",
-            border: "none",
-            padding: "10px 16px",
-            borderRadius: 4,
-            cursor: "pointer",
           }}
           onClick={() => setSelectedMenu("parkinOrder")}
         >
           Parkin Order
         </button>
         <button
+          className={selectedMenu === "serviceOrder" ? "home-logout-btn" : ""}
           style={{
             marginBottom: 16,
             background: selectedMenu === "serviceOrder" ? "#444" : "#333",
-            color: "#fff",
-            border: "none",
-            padding: "10px 16px",
-            borderRadius: 4,
-            cursor: "pointer",
           }}
           onClick={() => setSelectedMenu("serviceOrder")}
         >
           Service Order
         </button>
         <button
+          className={selectedMenu === "parkinLot" ? "home-logout-btn" : ""}
           style={{
             marginBottom: 16,
             background: selectedMenu === "parkinLot" ? "#444" : "#333",
-            color: "#fff",
-            border: "none",
-            padding: "10px 16px",
-            borderRadius: 4,
-            cursor: "pointer",
           }}
           onClick={() => setSelectedMenu("parkinLot")}
         >
@@ -131,15 +103,8 @@ const Home: React.FC = () => {
           <button
             onClick={handleLogout}
             disabled={loading}
-            style={{
-              marginTop: 32,
-              background: "#e74c3c",
-              color: "#fff",
-              border: "none",
-              padding: "10px 16px",
-              borderRadius: 4,
-              cursor: "pointer",
-            }}
+            className="home-logout-btn"
+            style={{ marginTop: 32, background: "#e74c3c" }}
           >
             {loading ? "Đang đăng xuất..." : "Đăng xuất"}
           </button>
@@ -147,9 +112,9 @@ const Home: React.FC = () => {
       </div>
 
       {/* Main Content */}
-      <div style={{ flex: 1, padding: 40 }}>
+      <div className="home-main">
         <h2>Chào mừng {username ? username : "bạn"} đến với Parkin AI!</h2>
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="home-error">{error}</p>}
         {selectedMenu === "dashboard" && <AdminDashboard />}
         {selectedMenu === "user" && <AdminUser />}
         {selectedMenu === "parkinOrder" && <AdminParkinOrder />}
