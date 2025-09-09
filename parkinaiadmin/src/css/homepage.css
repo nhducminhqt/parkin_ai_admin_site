@@ -12,3 +12,78 @@
   font-size: 20px;
   margin-top: 16px;
 }
+.homepage-banner {
+  background: linear-gradient(120deg, #00dcb5 0%, #005060 100%);
+  color: #fff;
+  padding: 80px 0 60px 0;
+  text-align: center;
+  position: relative;
+}
+.homepage-banner-logo {
+  height: 80px;
+  margin-bottom: 24px;
+}
+.homepage-banner-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.homepage-banner-desc {
+  font-size: 22px;
+  margin-bottom: 32px;
+}
+.homepage-banner-cta {
+  padding: 14px 40px;
+  background: #fff;
+  color: #00dcb5;
+  border: none;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 80, 96, 0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.homepage-banner-cta:hover {
+  background: #00dcb5;
+  color: #fff;
+}
+.homepage-section {
+  max-width: 1100px;
+  margin: 48px auto;
+  padding: 0 16px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0, 80, 96, 0.08);
+}
+.homepage-section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #005060;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.homepage-section-content {
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.homepage-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+.homepage-feature {
+  flex: 1 1 220px;
+  background: #e0f7fa;
+  border-radius: 12px;
+  padding: 32px 20px;
+  text-align: center;
+  color: #005060;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 80, 96, 0.06);
+}
