@@ -165,38 +165,106 @@ const Homepage: React.FC = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="homepage-section">
-        <h2 className="homepage-section-title">Why Choose ParkIn.AI?</h2>
-        <div className="homepage-features">
-          <div className="homepage-feature">
-            AI-powered parking recommendations
+      {/* Discover the Key to Stress-Free Parking Section */}
+      <div className="discover-the-key-inner-view">
+        <div className="section-title">
+          <h3 className="main-title">
+            Discover the Key to Stress-Free Parking!
+          </h3>
+        </div>
+        <div className="discover-the-key-list">
+          <div className="discover-the-key-card">
+            <div className="discover-the-key-card-icon">
+              <img
+                alt="Seamless Experience"
+                title="Seamless Experience"
+                loading="lazy"
+                width="32"
+                height="32"
+                decoding="async"
+                src="https://cms.parkin.ae/sites/default/files/2024-08/explore_1.png"
+                style={{ color: "transparent" }}
+              />
+            </div>
+            <h4>Seamless Experience</h4>
+            <p>Enjoy hassle-free parking with Parkin's intuitive solutions.</p>
           </div>
-          <div className="homepage-feature">
-            Real-time availability & booking
+          <div className="discover-the-key-card">
+            <div className="discover-the-key-card-icon">
+              <img
+                alt="Effortless Transactions"
+                title="Effortless Transactions"
+                loading="lazy"
+                width="32"
+                height="32"
+                decoding="async"
+                src="https://cms.parkin.ae/sites/default/files/2024-08/explore_2.png"
+                style={{ color: "transparent" }}
+              />
+            </div>
+            <h4>Effortless Transactions</h4>
+            <p>
+              Easily manage all your parking needs, from booking to
+              subscription, with Parkin user-friendly platform.
+            </p>
           </div>
-          <div className="homepage-feature">Seamless digital payments</div>
-          <div className="homepage-feature">
-            Private & public lots integration
+          <div className="discover-the-key-card">
+            <div className="discover-the-key-card-icon">
+              <img
+                alt="24/7 Customer Support"
+                title="24/7 Customer Support"
+                loading="lazy"
+                width="32"
+                height="32"
+                decoding="async"
+                src="https://cms.parkin.ae/sites/default/files/2024-08/explore_3.png"
+                style={{ color: "transparent" }}
+              />
+            </div>
+            <h4>24/7 Customer Support</h4>
+            <p>
+              Get reliable assistance round the clock for all your parking
+              needs.
+            </p>
           </div>
         </div>
-        <div className="homepage-section-content">
-          <p>
-            Experience the convenience of finding and booking your parking spot
-            in seconds. Our platform leverages AI and big data to optimize your
-            parking experience.
-          </p>
-        </div>
-      </section>
+      </div>
 
-      {/* Process Section */}
-      <section className="homepage-section">
-        <h2 className="homepage-section-title">How It Works</h2>
-        <div className="homepage-features">
-          <div className="homepage-feature">Search for available spots</div>
-          <div className="homepage-feature">Book instantly via app/web</div>
-          <div className="homepage-feature">Park and pay digitally</div>
-          <div className="homepage-feature">Enjoy stress-free parking</div>
+      {/* New Feature Section - Overlay Content on Image */}
+      <section className="new-feature-section">
+        <div className="container">
+          <div className="new-feature-image-overlay-wrap">
+            <img
+              alt="New Feature!"
+              title="New Feature!"
+              loading="lazy"
+              width="1312"
+              height="384"
+              decoding="async"
+              src="https://cms.parkin.ae/sites/default/files/2024-08/new_feature.webp"
+              className="new-feature-image"
+              style={{
+                color: "transparent",
+                maxWidth: "100%",
+                borderRadius: "16px",
+              }}
+            />
+            <div className="new-feature-overlay-content">
+              <h3 className="main-title">New Feature!</h3>
+              <p className="sub-title">
+                Take control and manage your subscription with ease from your
+                Parkin dashboard. Renew your card, Update your vehicle details,
+                or modify your subscription terms with just a few clicks.
+              </p>
+              <a
+                className="theme-button-border border-white"
+                aria-label="Learn More Button"
+                href="/subscription"
+              >
+                Check it Out
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>

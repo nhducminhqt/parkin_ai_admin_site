@@ -268,3 +268,196 @@
   background: #00dcb5;
   color: #fff;
 }
+
+/* Discover the Key to Stress-Free Parking Section */
+.discover-the-key-inner-view {
+  background: #f2fcff;
+  padding: 48px 0 32px 0;
+}
+.discover-the-key-inner-view .section-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.discover-the-key-inner-view .main-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #005060;
+  margin-bottom: 12px;
+}
+.discover-the-key-list {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.discover-the-key-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 80, 96, 0.08);
+  width: 320px;
+  padding: 32px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.discover-the-key-card-icon {
+  width: 56px;
+  height: 56px;
+  background: #e0f7fa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.discover-the-key-card-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.discover-the-key-card h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #005060;
+  margin-bottom: 10px;
+}
+.discover-the-key-card p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 0;
+}
+@media (max-width: 900px) {
+  .discover-the-key-list {
+    gap: 16px;
+  }
+  .discover-the-key-card {
+    width: 100%;
+    min-width: 220px;
+    max-width: 100%;
+  }
+}
+
+/* New Feature Section */
+.new-feature-section {
+  background: #f7faff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 80, 96, 0.07);
+  margin: 48px auto;
+  max-width: 1100px;
+  padding: 32px 16px;
+}
+.new-feature-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-feature-wrap > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.new-feature-section .section-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.new-feature-section .main-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #007b9c;
+}
+.new-feature-section .section-title .sub-title {
+  font-size: 18px;
+  color: #555;
+  margin: 16px 0 20px 0;
+  max-width: 600px;
+}
+.new-feature-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-feature-image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 80, 96, 0.08);
+}
+.border-white {
+  border: 2px solid #fff !important;
+  color: #007b9c !important;
+  background: #fff !important;
+  margin-top: 12px;
+}
+
+/* Overlay New Feature Section - Left Align, White Text */
+.new-feature-image-overlay-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-feature-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+.new-feature-overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0);
+  border-radius: 0 16px 16px 0;
+  padding: 32px 40px;
+  text-align: left;
+  max-width: 600px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.new-feature-overlay-content .main-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.new-feature-overlay-content .sub-title {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.new-feature-overlay-content .theme-button-border {
+  min-width: 160px;
+  font-size: 18px;
+  padding: 12px 0;
+  border-radius: 999px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 80, 96, 0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.new-feature-overlay-content .theme-button-border:hover {
+  background: #fff;
+  color: #007b9c;
+}
+@media (max-width: 900px) {
+  .new-feature-wrap > div {
+    max-width: 100%;
+  }
+  .new-feature-section {
+    padding: 16px 4px;
+  }
+  .new-feature-overlay-content {
+    padding: 16px 8px;
+    max-width: 95vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-items: center;
+  }
+}
