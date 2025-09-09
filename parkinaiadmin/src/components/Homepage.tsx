@@ -67,6 +67,104 @@ const Homepage: React.FC = () => {
         </div>
       </section>
 
+      {/* How to Pay for Parking Section */}
+      <section className="howtopay-parking">
+        <div className="container">
+          <div className="section-title">
+            <h3 className="main-title">How to Pay for Parking</h3>
+            <div className="content sub-title">
+              <p>
+                Explore simple and convenient ways to handle your parking
+                payments, designed to fit your needs and ensure a seamless
+                experience.
+              </p>
+            </div>
+          </div>
+          <div className="howtopay-parking-listing">
+            <div className="regular slider">
+              <a
+                className="howtopay-parking-list"
+                href="/variable-parking-tariff"
+              >
+                <div className="howtopay-parking-image">
+                  <img
+                    alt="Variable parking tariff"
+                    title="Variable parking tariff"
+                    loading="lazy"
+                    width="416"
+                    height="416"
+                    decoding="async"
+                    src="https://cms.parkin.ae/sites/default/files/2025-04/Variable-Parking-Tariff2_3.png"
+                    style={{ color: "transparent" }}
+                  />
+                </div>
+                <div className="howtopay-parking-content">
+                  <h4>Variable parking tariff</h4>
+                  <div className="content">
+                    <p>
+                      Check parking rates based on zone codes and peak hours to
+                      take advantage of variable tariffs so you can plan smarter
+                      and save more.
+                    </p>
+                  </div>
+                </div>
+                <div className="theme-button-border">Learn More</div>
+              </a>
+              <a className="howtopay-parking-list" href="/parking-information">
+                <div className="howtopay-parking-image">
+                  <img
+                    alt="Parking Zone Guide"
+                    title="Parking Zone Guide"
+                    loading="lazy"
+                    width="416"
+                    height="416"
+                    decoding="async"
+                    src="https://cms.parkin.ae/sites/default/files/2025-08/_ANS2164%201.png"
+                    style={{ color: "transparent" }}
+                  />
+                </div>
+                <div className="howtopay-parking-content">
+                  <h4>Parking Zone Guide</h4>
+                  <div className="content">
+                    <p>
+                      Discover zone-specific parking details, including fees and
+                      operational hours. Optimise your parking choices and stay
+                      informed to avoid fines.
+                    </p>
+                  </div>
+                </div>
+                <div className="theme-button-border">Learn More</div>
+              </a>
+              <a className="howtopay-parking-list" href="/offline-machine">
+                <div className="howtopay-parking-image">
+                  <img
+                    alt="Parkin Machines"
+                    title="Parkin Machines"
+                    loading="lazy"
+                    width="416"
+                    height="416"
+                    decoding="async"
+                    src="https://cms.parkin.ae/sites/default/files/2024-12/Offline%20Parkin%20Machine_0.png"
+                    style={{ color: "transparent" }}
+                  />
+                </div>
+                <div className="howtopay-parking-content">
+                  <h4>Parkin Machines</h4>
+                  <div className="content">
+                    <p>
+                      Explore available options and familiarise yourself with
+                      how to operate offline parking machines, including the
+                      payment processes.
+                    </p>
+                  </div>
+                </div>
+                <div className="theme-button-border">Learn More</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="homepage-section">
         <h2 className="homepage-section-title">Why Choose ParkIn.AI?</h2>
