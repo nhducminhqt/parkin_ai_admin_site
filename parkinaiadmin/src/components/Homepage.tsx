@@ -164,7 +164,131 @@ const Homepage: React.FC = () => {
           </div>
         </div>
       </section>
-
+      {/* Most Popular Services Section */}
+      <section className="most-popular-services">
+        <div className="container">
+          <div className="section-title">
+            <h3 className="main-title">Explore Our Most Popular Services</h3>
+            <p className="sub-title">
+              Unlock convenience and flexibility with Parkin top services.
+              Explore seamless options tailored for your ultimate parking ease.
+            </p>
+          </div>
+          <div className="most-popular-services-listing">
+            <div className="most-popular-services-slider">
+              <a
+                className="most-popular-services-list"
+                aria-label="Learn More Button"
+                href="/fines"
+              >
+                <div className="most-popular-services-image">
+                  <img
+                    alt="Parkin fines"
+                    title="Image"
+                    loading="lazy"
+                    width="480"
+                    height="232"
+                    decoding="async"
+                    src="https://cms.parkin.ae/sites/default/files/2025-02/en.jpg"
+                    style={{ color: "transparent" }}
+                  />
+                </div>
+                <div className="most-popular-services-content">
+                  <h4>Pay Parking Fines</h4>
+                  <p>
+                    Pay and manage your fines effortlessly with the Parkin
+                    platform for a smooth parking experience.
+                  </p>
+                  <div className="theme-button-border">Learn More</div>
+                </div>
+              </a>
+              <a
+                className="most-popular-services-list"
+                aria-label="Learn More Button"
+                href="/pay-for-parking"
+              >
+                <div className="most-popular-services-image">
+                  <img
+                    alt="Pay for Parking"
+                    title="Pay for Parking"
+                    loading="lazy"
+                    width="480"
+                    height="232"
+                    decoding="async"
+                    src="https://cms.parkin.ae/sites/default/files/2024-12/Pay%20for%20Parking-min_0.png"
+                    style={{ color: "transparent" }}
+                  />
+                </div>
+                <div className="most-popular-services-content">
+                  <h4>Pay for Parking</h4>
+                  <p>
+                    Choose your parking type and zone to pay instantly or
+                    schedule it later with ease.
+                  </p>
+                  <div className="theme-button-border">Learn More</div>
+                </div>
+              </a>
+              <a
+                className="most-popular-services-list"
+                aria-label="Learn More Button"
+                href="/subscription"
+              >
+                <div className="most-popular-services-image">
+                  <img
+                    alt="Subscribe to a Parking"
+                    title="Subscribe to a Parking"
+                    loading="lazy"
+                    width="480"
+                    height="232"
+                    decoding="async"
+                    src="https://cms.parkin.ae/sites/default/files/2024-12/Subscribe%20to%20a%20Parking_0.png"
+                    style={{ color: "transparent" }}
+                  />
+                </div>
+                <div className="most-popular-services-content">
+                  <h4>Subscribe to a Parking</h4>
+                  <p>
+                    Make parking easier with a subscription offering access to
+                    designated facilities when needed.
+                  </p>
+                  <div className="theme-button-border">Learn More</div>
+                </div>
+              </a>
+              {/* Card Coming Soon dùng button thay vì a href="#" */}
+              <div
+                className="most-popular-services-list"
+                aria-label="Coming Soon"
+              >
+                <div className="most-popular-services-image">
+                  <img
+                    alt="Get a Permit"
+                    title="Get a Permit"
+                    loading="lazy"
+                    width="480"
+                    height="232"
+                    decoding="async"
+                    src="https://cms.parkin.ae/sites/default/files/2024-12/Get%20a%20Permit_0.png"
+                    style={{ color: "transparent" }}
+                  />
+                </div>
+                <div className="most-popular-services-content">
+                  <h4>Get a Permit</h4>
+                  <p>
+                    Access exclusive parking privileges with permits designed
+                    for convenience and comfort.
+                  </p>
+                  <button
+                    className="theme-button-border coming-soon-btn"
+                    disabled
+                  >
+                    Coming Soon
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Discover the Key to Stress-Free Parking Section */}
       <div className="discover-the-key-inner-view">
         <div className="section-title">
@@ -264,6 +388,118 @@ const Homepage: React.FC = () => {
                 Check it Out
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Parking Convenience Section */}
+      <section className="parking-convenience">
+        <div className="container">
+          <div className="section-title">
+            <h3 className="main-title">
+              Personalised Features for the Ultimate Parking Convenience
+            </h3>
+            <p className="sub-title">
+              Seamlessly tailored to your needs, our innovative features
+              redefine the parking experience, ensuring smooth transactions,
+              streamlined management, and hassle-free payments
+            </p>
+          </div>
+          <div className="parking-convenience-listing">
+            <div className="parking-convenience-slider">
+              <div className="parking-convenience-list">
+                <div className="parking-convenience-image">
+                  <img
+                    alt="Personalised Notifications"
+                    title="Personalised Notifications"
+                    loading="lazy"
+                    width="416"
+                    height="416"
+                    decoding="async"
+                    src="https://cms.parkin.ae/sites/default/files/2024-12/Notify.png"
+                    style={{ color: "transparent" }}
+                  />
+                </div>
+                <div className="parking-convenience-content">
+                  <h4>Personalised Notifications</h4>
+                  <p>
+                    Stay updated with personalised alerts from Parkin. Get
+                    reminders for parking expiration, subscription renewals,
+                    timings, exclusive offers, and more, ensuring a smooth and
+                    efficient parking experience tailored to your needs.
+                  </p>
+                </div>
+              </div>
+              <div className="parking-convenience-list">
+                <div className="parking-convenience-image">
+                  <img
+                    alt="Multi-Vehicle Management"
+                    title="Multi-Vehicle Management"
+                    loading="lazy"
+                    width="416"
+                    height="416"
+                    decoding="async"
+                    src="https://cms.parkin.ae/sites/default/files/2024-12/Multi%20Vehicle%20Management.png"
+                    style={{ color: "transparent" }}
+                  />
+                </div>
+                <div className="parking-convenience-content">
+                  <h4>Multi-Vehicle Management</h4>
+                  <p>
+                    Effortlessly manage parking for all your vehicles and those
+                    of your first-degree relatives with our intuitive and
+                    easy-to-use tools, designed to accommodate all your parking
+                    requirements.
+                  </p>
+                </div>
+              </div>
+              <div className="parking-convenience-list">
+                <div className="parking-convenience-image">
+                  <img
+                    alt="Contactless Payments"
+                    title="Contactless Payments"
+                    loading="lazy"
+                    width="416"
+                    height="416"
+                    decoding="async"
+                    src="https://cms.parkin.ae/sites/default/files/2024-12/Contactless%20Payment.png"
+                    style={{ color: "transparent" }}
+                  />
+                </div>
+                <div className="parking-convenience-content">
+                  <h4>Contactless Payments</h4>
+                  <p>
+                    Experience smooth transactions with Parkin's diverse payment
+                    options. Whether you're paying through our app or at the
+                    gate, enjoy hassle-free, secure, and convenient parking
+                    payments customized to your preference.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Need Help Section */}
+      <section className="need-help">
+        <div className="container">
+          <div className="need-help-wrap">
+            <div className="need-help-text">
+              <div className="main-title">Need Help?</div>
+              <p className="sub-title">
+                We're here for you! If you have any questions or need
+                assistance, don't hesitate to reach out. Contact our support
+                team for quick and friendly help.
+              </p>
+            </div>
+            <a
+              className="theme-button"
+              aria-label="Contact Us Button"
+              href="/contact-us"
+            >
+              Contact Us
+            </a>
           </div>
         </div>
       </section>
