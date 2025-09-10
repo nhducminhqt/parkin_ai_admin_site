@@ -1,8 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../css/header.css";
 
 const Header: React.FC = () => {
+  const location = useLocation();
+  const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
   return (
     <header className="theme-header">
       <div className="container">
@@ -16,7 +23,11 @@ const Header: React.FC = () => {
               />
             </Link>
             <nav className="header-nav">
-              <Link to="/" className="header-nav-link">
+              <Link
+                to="/"
+                className="header-nav-link"
+                onClick={handleHomeClick}
+              >
                 Home
               </Link>
               <Link to="/investor" className="header-nav-link">
