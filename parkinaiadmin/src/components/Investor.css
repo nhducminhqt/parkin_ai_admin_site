@@ -1,3 +1,11 @@
+.investors-glance {
+  direction: ltr;
+  padding: 10px 30px 40px 40px;
+}
+.investors-glance * {
+  direction: ltr;
+  text-align: left;
+}
 .investor-about {
   width: 100%;
   background: #fff;
@@ -7,12 +15,12 @@
 }
 
 .investor-about-container {
-  max-width: 900px;
-  width: 100%;
+  max-width: 1200px;
+  width: 98%;
   background: #f7f9fa;
   border-radius: 20px;
   box-shadow: 0 4px 32px rgba(25, 118, 210, 0.08);
-  padding: 48px 40px;
+  padding: 24px 18px;
   position: relative;
 }
 
@@ -25,7 +33,7 @@
 }
 
 .investor-about-text {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.7;
   margin-bottom: 24px;
   color: #222;
