@@ -1,5 +1,6 @@
 import React from "react";
-import "./Investor.css";
+import "../css/Investor.css";
+import Subscribe from "./Subscribe";
 
 const Investor: React.FC = () => {
   return (
@@ -69,6 +70,7 @@ const Investor: React.FC = () => {
           </div>
         </div>
       </section>
+      <Subscribe />
     </>
   );
 };

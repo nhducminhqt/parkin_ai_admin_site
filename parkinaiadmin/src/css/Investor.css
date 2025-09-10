@@ -1,10 +1,121 @@
+/* Subscribe Section Styles */
+
+.subscribe {
+  background: #00303a;
+  padding: 48px 0;
+}
+.subscribe .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.subscribe-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.subscribe-text {
+  flex: 1;
+  text-align: left;
+}
+.subscribe-text .main-title {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Effra", Arial, sans-serif;
+  color: #19e6c1;
+  margin-bottom: 12px;
+}
+.subscribe-text p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Effra", Arial, sans-serif;
+  margin: 0;
+}
+.subscribe-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+.parkin-input .form-control {
+  padding: 16px 24px;
+  border: none;
+  border-radius: 16px;
+  font-size: 20px;
+  font-family: "Effra", Arial, sans-serif;
+  color: #00303a;
+  background: #fff;
+  min-width: 320px;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.theme-button {
+  background: #004d5a;
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  padding: 14px 36px;
+  font-size: 20px;
+  font-family: "Effra", Arial, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.theme-button:hover {
+  background: #19e6c1;
+  color: #00303a;
+}
+.subscribe-success {
+  margin-top: 18px;
+  color: #19e6c1;
+  font-size: 18px;
+  text-align: left;
+  font-family: "Effra", Arial, sans-serif;
+}
+@media (max-width: 900px) {
+  .subscribe-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .subscribe-form {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .parkin-input .form-control {
+    min-width: 0;
+    width: 100%;
+  }
+  .theme-button {
+    width: 100%;
+  }
+}
 .investors-glance {
   direction: ltr;
-  padding: 10px 30px 40px 40px;
+  padding: 10px 30px 50px 50px;
+  font-family: "Effra", Arial, sans-serif;
+  color: #00303a;
 }
 .investors-glance * {
   direction: ltr;
   text-align: left;
+  font-family: inherit;
+}
+.main-title,
+.p1 {
+  font-family: "Effra", Arial, sans-serif;
+  color: #00303a;
+}
+.p1 {
+  font-family: "Effra", Arial, sans-serif;
+  color: #00303a;
+  margin-bottom: 32px;
 }
 .investor-about {
   width: 100%;
