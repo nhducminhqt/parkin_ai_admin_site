@@ -37,7 +37,7 @@ const Login: React.FC = () => {
       </div>
       <div className="login-right">
         <div className="login-form-container">
-          <div className="login-title">Login</div>
+          <div className="login-title">Admin Login</div>
           <div className="login-divider">
             <div className="login-divider-line" />
             <div className="login-divider-or">Or</div>
@@ -55,9 +55,6 @@ const Login: React.FC = () => {
             />
             <div className="login-row">
               <div className="login-label">Password</div>
-              <a className="login-link" href="#">
-                Forgot Username?
-              </a>
             </div>
             <input
               type="password"
@@ -71,7 +68,7 @@ const Login: React.FC = () => {
               <label className="login-remember">
                 <input type="checkbox" /> Remember Me
               </label>
-              <a className="login-link" href="#">
+              <a className="login-link" href="/login">
                 Forgot Password?
               </a>
             </div>

@@ -50,51 +50,41 @@ const Home: React.FC = () => {
       <div className="home-sidebar">
         <h3 className="home-sidebar-title">Quản lý Admin</h3>
         <button
-          className={selectedMenu === "dashboard" ? "home-logout-btn" : ""}
-          style={{
-            marginBottom: 16,
-            background: selectedMenu === "dashboard" ? "#444" : "#333",
-          }}
+          className={`home-sidebar-btn${
+            selectedMenu === "dashboard" ? " selected" : ""
+          }`}
           onClick={() => setSelectedMenu("dashboard")}
         >
           Dashboard
         </button>
         <button
-          className={selectedMenu === "user" ? "home-logout-btn" : ""}
-          style={{
-            marginBottom: 16,
-            background: selectedMenu === "user" ? "#444" : "#333",
-          }}
+          className={`home-sidebar-btn${
+            selectedMenu === "user" ? " selected" : ""
+          }`}
           onClick={() => setSelectedMenu("user")}
         >
           User
         </button>
         <button
-          className={selectedMenu === "parkinOrder" ? "home-logout-btn" : ""}
-          style={{
-            marginBottom: 16,
-            background: selectedMenu === "parkinOrder" ? "#444" : "#333",
-          }}
+          className={`home-sidebar-btn${
+            selectedMenu === "parkinOrder" ? " selected" : ""
+          }`}
           onClick={() => setSelectedMenu("parkinOrder")}
         >
           Parkin Order
         </button>
         <button
-          className={selectedMenu === "serviceOrder" ? "home-logout-btn" : ""}
-          style={{
-            marginBottom: 16,
-            background: selectedMenu === "serviceOrder" ? "#444" : "#333",
-          }}
+          className={`home-sidebar-btn${
+            selectedMenu === "serviceOrder" ? " selected" : ""
+          }`}
           onClick={() => setSelectedMenu("serviceOrder")}
         >
           Service Order
         </button>
         <button
-          className={selectedMenu === "parkinLot" ? "home-logout-btn" : ""}
-          style={{
-            marginBottom: 16,
-            background: selectedMenu === "parkinLot" ? "#444" : "#333",
-          }}
+          className={`home-sidebar-btn${
+            selectedMenu === "parkinLot" ? " selected" : ""
+          }`}
           onClick={() => setSelectedMenu("parkinLot")}
         >
           Parkin Lot
@@ -104,7 +94,6 @@ const Home: React.FC = () => {
             onClick={handleLogout}
             disabled={loading}
             className="home-logout-btn"
-            style={{ marginTop: 32, background: "#e74c3c" }}
           >
             {loading ? "Đang đăng xuất..." : "Đăng xuất"}
           </button>
