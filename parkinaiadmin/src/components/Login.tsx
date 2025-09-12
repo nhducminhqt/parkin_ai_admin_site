@@ -31,34 +31,57 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="login-container">
-      <h2 className="login-title">Parkin AI - Đăng nhập</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="login-form-group">
-          <label>Email:</label>
-          <input
-            type="email"
-            value={account}
-            onChange={(e) => setAccount(e.target.value)}
-            required
-            className="login-input"
-          />
+    <div className="login-page">
+      <div className="login-left">
+        <img src="/loginanh.jpg" alt="Parkin Logo" className="login-logo" />
+      </div>
+      <div className="login-right">
+        <div className="login-form-container">
+          <div className="login-title">Login</div>
+          <div className="login-divider">
+            <div className="login-divider-line" />
+            <div className="login-divider-or">Or</div>
+            <div className="login-divider-line" />
+          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="login-label">Username</div>
+            <input
+              type="text"
+              value={account}
+              onChange={(e) => setAccount(e.target.value)}
+              required
+              className="login-input"
+              placeholder="Type in your username"
+            />
+            <div className="login-row">
+              <div className="login-label">Password</div>
+              <a className="login-link" href="#">
+                Forgot Username?
+              </a>
+            </div>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="login-input"
+              placeholder="Enter password"
+            />
+            <div className="login-row">
+              <label className="login-remember">
+                <input type="checkbox" /> Remember Me
+              </label>
+              <a className="login-link" href="#">
+                Forgot Password?
+              </a>
+            </div>
+            <button type="submit" disabled={loading} className="login-button">
+              {loading ? "Logging in..." : "Continue"}
+            </button>
+            {error && <div className="login-error">{error}</div>}
+          </form>
         </div>
-        <div className="login-form-group">
-          <label>Mật khẩu:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            className="login-input"
-          />
-        </div>
-        <button type="submit" disabled={loading} className="login-btn">
-          {loading ? "Đang đăng nhập..." : "Đăng nhập"}
-        </button>
-        {error && <div className="login-error">{error}</div>}
-      </form>
+      </div>
     </div>
   );
 };
