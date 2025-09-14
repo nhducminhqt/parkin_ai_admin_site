@@ -27,7 +27,22 @@
 .users-search {
   display: flex;
   gap: 12px;
-  align-items: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.search-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.search-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #00606a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .search-input {
@@ -37,17 +52,35 @@
   font-size: 16px;
   color: #00606a;
   background: #fff;
-  min-width: 250px;
+  min-width: 200px;
   transition: border-color 0.2s;
 }
 
-.search-input:focus {
+.search-select {
+  padding: 12px 16px;
+  border: 2px solid #e0f7fa;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #00606a;
+  background: #fff;
+  min-width: 150px;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.search-input:focus,
+.search-select:focus {
   outline: none;
   border-color: #00dcb5;
 }
 
 .search-input::placeholder {
   color: #78909c;
+}
+
+.search-buttons {
+  display: flex;
+  gap: 8px;
 }
 
 .search-button {
@@ -63,6 +96,31 @@
 
 .search-button:hover {
   background: #00b89e;
+}
+
+.clear-button {
+  padding: 12px 20px;
+  background: #78909c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.clear-button:hover {
+  background: #607d8b;
+}
+
+.filter-summary {
+  background: #e8f5e8;
+  color: #2e7d32;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 8px;
 }
 
 /* Users Table */

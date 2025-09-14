@@ -102,7 +102,6 @@ const Home: React.FC = () => {
 
       {/* Main Content */}
       <div className="home-main">
-        <h2>Chào mừng {username ? username : "bạn"} đến với Parkin AI!</h2>
         {error && <p className="home-error">{error}</p>}
         {selectedMenu === "dashboard" && <AdminDashboard />}
         {selectedMenu === "user" && <AdminUser />}

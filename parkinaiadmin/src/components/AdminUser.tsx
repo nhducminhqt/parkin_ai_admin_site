@@ -6,6 +6,7 @@ import {
   fetchUserById,
   User,
   UsersResponse,
+  UserFilters,
 } from "../api/users";
 import "../css/users.css";
 
@@ -17,8 +18,12 @@ const AdminUser: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(10);
   const [totalUsers, setTotalUsers] = useState<number>(0);
+
+  // Filter states
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [isSearching, setIsSearching] = useState<boolean>(false);
+  const [usernameFilter, setUsernameFilter] = useState<string>("");
+  const [roleFilter, setRoleFilter] = useState<string>("");
+  const [isFiltering, setIsFiltering] = useState<boolean>(false);
 
   // Modal states
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
@@ -77,20 +82,17 @@ const AdminUser: React.FC = () => {
   const loadUsers = async (
     page: number = currentPage,
     size: number = pageSize,
-    query: string = searchQuery
+    filters?: UserFilters
   ) => {
     try {
       setLoading(true);
       setError(null);
 
-      let response: UsersResponse;
-      if (query.trim()) {
-        response = await searchUsers(query.trim(), page, size);
-        setIsSearching(true);
-      } else {
-        response = await fetchUsers(page, size);
-        setIsSearching(false);
-      }
+      // Determine if we're filtering
+      const hasFilters = filters?.search || filters?.username || filters?.role;
+      setIsFiltering(!!hasFilters);
+
+      const response = await fetchUsers(page, size, filters);
 
       setUsers(response.users);
       setTotalUsers(response.total);
@@ -109,27 +111,35 @@ const AdminUser: React.FC = () => {
 
   // Initial load
   useEffect(() => {
-    loadUsers(1, 10, "");
+    loadUsers(1, 10);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Handle search
-  const handleSearch = () => {
+  // Handle filter/search
+  const handleFilter = () => {
     setCurrentPage(1);
-    loadUsers(1, pageSize, searchQuery);
+    const filters: UserFilters = {};
+    if (searchQuery.trim()) filters.search = searchQuery.trim();
+    if (usernameFilter.trim()) filters.username = usernameFilter.trim();
+    if (roleFilter) filters.role = roleFilter;
+    loadUsers(1, pageSize, filters);
   };
 
   // Handle search input key press
   const handleSearchKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
-      handleSearch();
+      handleFilter();
     }
   };
 
   // Handle page change
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPages) {
-      loadUsers(page, pageSize, searchQuery);
+      const filters: UserFilters = {};
+      if (searchQuery.trim()) filters.search = searchQuery.trim();
+      if (usernameFilter.trim()) filters.username = usernameFilter.trim();
+      if (roleFilter) filters.role = roleFilter;
+      loadUsers(page, pageSize, filters);
     }
   };
 
@@ -138,14 +148,20 @@ const AdminUser: React.FC = () => {
     const newSize = parseInt(e.target.value);
     setPageSize(newSize);
     setCurrentPage(1);
-    loadUsers(1, newSize, searchQuery);
+    const filters: UserFilters = {};
+    if (searchQuery.trim()) filters.search = searchQuery.trim();
+    if (usernameFilter.trim()) filters.username = usernameFilter.trim();
+    if (roleFilter) filters.role = roleFilter;
+    loadUsers(1, newSize, filters);
   };
 
-  // Clear search
-  const clearSearch = () => {
+  // Clear all filters
+  const clearFilters = () => {
     setSearchQuery("");
+    setUsernameFilter("");
+    setRoleFilter("");
     setCurrentPage(1);
-    loadUsers(1, pageSize, "");
+    loadUsers(1, pageSize);
   };
 
   // Format date
@@ -210,25 +226,55 @@ const AdminUser: React.FC = () => {
       <div className="users-header">
         <h1 className="users-title">Quản lý Người dùng</h1>
 
-        {/* Search */}
+        {/* Filters */}
         <div className="users-search">
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Tìm kiếm theo tên hoặc email..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyPress={handleSearchKeyPress}
-          />
-          <button className="search-button" onClick={handleSearch}>
-            Tìm kiếm
-          </button>
-          {isSearching && (
-            <button className="search-button" onClick={clearSearch}>
-              Xóa bộ lọc
+          <div className="search-group">
+            <label className="search-label">Username</label>
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Lọc theo username..."
+              value={usernameFilter}
+              onChange={(e) => setUsernameFilter(e.target.value)}
+              onKeyPress={handleSearchKeyPress}
+            />
+          </div>
+
+          <div className="search-group">
+            <label className="search-label">Vai trò</label>
+            <select
+              className="search-select"
+              value={roleFilter}
+              onChange={(e) => setRoleFilter(e.target.value)}
+            >
+              <option value="">Tất cả vai trò</option>
+              <option value="role_admin">Admin</option>
+              <option value="role_user">User</option>
+            </select>
+          </div>
+
+          <div className="search-buttons">
+            <button className="search-button" onClick={handleFilter}>
+              🔍 Lọc
             </button>
-          )}
+            {isFiltering && (
+              <button className="clear-button" onClick={clearFilters}>
+                ✖️ Xóa bộ lọc
+              </button>
+            )}
+          </div>
         </div>
+
+        {/* Filter Summary */}
+        {isFiltering && (
+          <div className="filter-summary">
+            Đang lọc:
+            {searchQuery && ` Tìm kiếm "${searchQuery}"`}
+            {usernameFilter && ` Username "${usernameFilter}"`}
+            {roleFilter &&
+              ` Vai trò "${roleFilter === "role_admin" ? "Admin" : "User"}"`}
+          </div>
+        )}
       </div>
 
       {/* Error Message */}
@@ -315,7 +361,7 @@ const AdminUser: React.FC = () => {
             <div className="pagination-info">
               Hiển thị {startItem}-{endItem} trong tổng số {totalUsers} người
               dùng
-              {isSearching && ` (đã lọc)`}
+              {isFiltering && ` (đã lọc)`}
             </div>
 
             <div className="pagination-controls">
@@ -358,12 +404,12 @@ const AdminUser: React.FC = () => {
         <div className="users-empty">
           <h3>Không tìm thấy người dùng</h3>
           <p>
-            {isSearching
-              ? "Không có người dùng nào khớp với từ khóa tìm kiếm."
+            {isFiltering
+              ? "Không có người dùng nào khớp với bộ lọc hiện tại."
               : "Chưa có người dùng nào trong hệ thống."}
           </p>
-          {isSearching && (
-            <button className="search-button" onClick={clearSearch}>
+          {isFiltering && (
+            <button className="search-button" onClick={clearFilters}>
               Hiển thị tất cả người dùng
             </button>
           )}

@@ -24,6 +24,12 @@ export interface UsersResponse {
   size: number;
 }
 
+export interface UserFilters {
+  username?: string;
+  role?: string;
+  search?: string;
+}
+
 // Utility function for retry with exponential backoff
 const retryWithDelay = async <T>(
   fn: () => Promise<T>,
@@ -42,10 +48,11 @@ const retryWithDelay = async <T>(
   }
 };
 
-// Function to fetch users with pagination
+// Function to fetch users with pagination and filters
 export const fetchUsers = async (
   page: number = 1,
-  pageSize: number = 10
+  pageSize: number = 10,
+  filters?: UserFilters
 ): Promise<UsersResponse> => {
   const token = localStorage.getItem("token");
 
@@ -55,19 +62,34 @@ export const fetchUsers = async (
   }
 
   const fetchFunction = async (): Promise<UsersResponse> => {
-    console.log(`Fetching users - Page: ${page}, Size: ${pageSize}`);
+    // Build query parameters
+    const params = new URLSearchParams({
+      page: page.toString(),
+      page_size: pageSize.toString(),
+    });
+
+    // Add filters if provided
+    if (filters?.username) {
+      params.append("username", filters.username);
+    }
+    if (filters?.role) {
+      params.append("role", filters.role);
+    }
+    if (filters?.search) {
+      params.append("search", filters.search);
+    }
+
+    const queryString = params.toString();
+    console.log(`Fetching users - ${queryString}`);
     console.log(`Using token: ${token ? "Token found" : "No token"}`);
 
-    const response = await fetch(
-      `${API_BASE_URL}/admin/users?page=${page}&page_size=${pageSize}`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`${API_BASE_URL}/admin/users?${queryString}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
 
     console.log(`Users API Response Status: ${response.status}`);
 
@@ -85,52 +107,13 @@ export const fetchUsers = async (
   return retryWithDelay(fetchFunction);
 };
 
-// Function to search users by username or email
+// Function to search users by username or email (legacy support)
 export const searchUsers = async (
   query: string,
   page: number = 1,
   pageSize: number = 10
 ): Promise<UsersResponse> => {
-  const token = localStorage.getItem("token");
-
-  if (!token) {
-    console.error("No token found in localStorage");
-    throw new Error("Vui lòng đăng nhập lại để tiếp tục");
-  }
-
-  const fetchFunction = async (): Promise<UsersResponse> => {
-    console.log(
-      `Searching users - Query: ${query}, Page: ${page}, Size: ${pageSize}`
-    );
-    console.log(`Using token: ${token ? "Token found" : "No token"}`);
-
-    const response = await fetch(
-      `${API_BASE_URL}/admin/users?page=${page}&page_size=${pageSize}&search=${encodeURIComponent(
-        query
-      )}`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    console.log(`Search Users API Response Status: ${response.status}`);
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("Search Users API Error:", errorText);
-      throw new Error(`HTTP ${response.status}: ${errorText}`);
-    }
-
-    const data: UsersResponse = await response.json();
-    console.log("Search Users API Success:", data);
-    return data;
-  };
-
-  return retryWithDelay(fetchFunction);
+  return fetchUsers(page, pageSize, { search: query });
 };
 
 // Function to fetch single user by ID
