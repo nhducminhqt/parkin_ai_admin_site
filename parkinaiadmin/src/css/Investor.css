@@ -102,11 +102,32 @@
   font-family: "Effra", Arial, sans-serif;
   color: #00303a;
 }
+
+.investors-glance-item-content {
+  display: block;
+  width: 100%;
+}
+
 .investors-glance * {
   direction: ltr;
   text-align: left;
   font-family: inherit;
 }
+
+.section-title-investors {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.main-title-investors {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: "Effra", Arial, sans-serif;
+  color: #00303a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
 .main-title,
 .p1 {
   font-family: "Effra", Arial, sans-serif;

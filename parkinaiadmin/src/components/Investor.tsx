@@ -24,8 +24,10 @@ const Investor: React.FC = () => {
         <div className="container">
           <div className="investors-glance-item-wrap">
             <div className="investors-glance-item-content">
-              <div className="section-title">
-                <h3 className="main-title">Who we are and what we do…</h3>
+              <div className="section-title-investors">
+                <h3 className="main-title-investors">
+                  Who we are and what we do…
+                </h3>
                 <div>
                   <p className="p1">
                     With a unique blend of operational excellence, technological
