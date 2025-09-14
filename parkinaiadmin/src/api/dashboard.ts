@@ -63,6 +63,13 @@ const retryWithDelay = async <T>(
 
 // Get user token from localStorage
 const getAuthToken = (): string | null => {
+  // Try to get token directly first (preferred method)
+  const directToken = localStorage.getItem("token");
+  if (directToken) {
+    return directToken;
+  }
+
+  // Fallback to old method for backward compatibility
   const userData = localStorage.getItem("user");
   if (userData) {
     try {
