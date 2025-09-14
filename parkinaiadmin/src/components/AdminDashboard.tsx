@@ -36,22 +36,36 @@ const AdminDashboard: React.FC = () => {
   const [statusData, setStatusData] = useState<StatusData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>("");
+  const [startDate, setStartDate] = useState<string>("");
+  const [endDate, setEndDate] = useState<string>("");
 
-  // Get date range for the past week
-  const getDateRange = () => {
+  // Get default date range for the past month
+  const getDefaultDateRange = () => {
     const end = new Date();
     const start = new Date();
-    start.setDate(end.getDate() - 7);
+    start.setMonth(end.getMonth() - 1); // 1 month ago
 
-    const formatDate = (date: Date) => {
-      return date.toISOString().slice(0, 19).replace("T", " ");
+    const formatDateInput = (date: Date) => {
+      return date.toISOString().slice(0, 10); // YYYY-MM-DD format for input[type="date"]
     };
 
     return {
-      startTime: formatDate(start),
-      endTime: formatDate(end),
+      startDate: formatDateInput(start),
+      endDate: formatDateInput(end),
     };
   };
+
+  const formatDateForAPI = (dateString: string, isEndDate: boolean = false) => {
+    return isEndDate ? dateString + " 23:59:59" : dateString + " 00:00:00";
+  };
+
+  // Initialize default dates
+  useEffect(() => {
+    const { startDate: defaultStart, endDate: defaultEnd } =
+      getDefaultDateRange();
+    setStartDate(defaultStart);
+    setEndDate(defaultEnd);
+  }, []);
 
   useEffect(() => {
     let isCancelled = false;
@@ -60,12 +74,16 @@ const AdminDashboard: React.FC = () => {
       try {
         if (isCancelled) return;
         setLoading(true);
-        const { startTime, endTime } = getDateRange();
+
+        if (!startDate || !endDate) return;
+
+        const startTime = formatDateForAPI(startDate, false);
+        const endTime = formatDateForAPI(endDate, true);
 
         const [revenue, trends, status] = await Promise.all([
-          fetchRevenue("1w", startTime, endTime),
-          fetchTrends("1w", startTime, endTime),
-          fetchStatus("1w", startTime, endTime),
+          fetchRevenue("1m", startTime, endTime),
+          fetchTrends("1m", startTime, endTime),
+          fetchStatus("1m", startTime, endTime),
         ]);
 
         if (!isCancelled) {
@@ -89,7 +107,7 @@ const AdminDashboard: React.FC = () => {
     return () => {
       isCancelled = true;
     };
-  }, []);
+  }, [startDate, endDate]);
 
   if (loading) {
     return (
@@ -111,12 +129,41 @@ const AdminDashboard: React.FC = () => {
     <div className="dashboard-container">
       <h2 className="dashboard-title">Dashboard Overview</h2>
 
+      {/* Date Range Picker */}
+      <div className="dashboard-date-picker">
+        <div className="date-picker-group">
+          <label htmlFor="start-date">Start Date:</label>
+          <input
+            id="start-date"
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            className="date-input"
+          />
+        </div>
+        <div className="date-picker-group">
+          <label htmlFor="end-date">End Date:</label>
+          <input
+            id="end-date"
+            type="date"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+            className="date-input"
+          />
+        </div>
+        <div className="date-picker-info">
+          <span>
+            Showing data from {startDate} to {endDate}
+          </span>
+        </div>
+      </div>
+
       {/* Revenue Card */}
       <div className="dashboard-cards">
         <div className="dashboard-card revenue-card">
           <div className="card-header">
             <h3>Total Revenue</h3>
-            <span className="card-period">Last 7 days</span>
+            <span className="card-period">Custom Period</span>
           </div>
           <div className="card-value">
             ${revenueData?.total_revenue?.toFixed(2) || "0.00"}
@@ -127,7 +174,7 @@ const AdminDashboard: React.FC = () => {
         <div className="dashboard-card orders-card">
           <div className="card-header">
             <h3>Total Orders</h3>
-            <span className="card-period">Last 7 days</span>
+            <span className="card-period">Custom Period</span>
           </div>
           <div className="card-value">{trendsData?.total || 0}</div>
         </div>
