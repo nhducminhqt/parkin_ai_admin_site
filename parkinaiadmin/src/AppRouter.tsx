@@ -14,6 +14,7 @@ import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
 import Homepage from "./components/Homepage";
 import Investor from "./components/Investor";
+import Individual from "./components/Individual";
 
 const AppRouter: React.FC = () => (
   <Router>
@@ -27,6 +28,7 @@ const AppRouter: React.FC = () => (
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/investor" element={<Investor />} />
+        <Route path="/individuals" element={<Individual />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

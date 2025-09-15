@@ -1,0 +1,537 @@
+/* Individual Services Page */
+.individual-container {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.individual-hero {
+  background: linear-gradient(135deg, #1a5a5a 0%, #00d4aa 100%);
+  color: white;
+  padding: 120px 0 80px 0;
+  display: flex;
+  align-items: center;
+  min-height: 600px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  padding: 0 40px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-primary {
+  background: #00d4aa;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #00c299;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #1a5a5a;
+  transform: translateY(-2px);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Services Overview */
+.services-overview {
+  padding: 100px 0;
+  background: white;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a5a5a;
+  text-align: center;
+  margin-bottom: 60px;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.service-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 90, 90, 0.1) 0%,
+    rgba(0, 212, 170, 0.1) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.service-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a5a5a;
+  margin-bottom: 15px;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* App Features */
+.app-features {
+  padding: 100px 0;
+  background: #f8fafc;
+}
+
+.features-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.features-text {
+  padding-right: 40px;
+}
+
+.feature-list {
+  margin: 40px 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.feature-check {
+  width: 24px;
+  height: 24px;
+  background: #00d4aa;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature-info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a5a5a;
+  margin-bottom: 5px;
+}
+
+.feature-info p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.download-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.download-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.download-btn img {
+  height: 50px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+}
+
+.features-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* Pricing Section */
+.pricing-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.pricing-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  border-color: #00d4aa;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 212, 170, 0.1);
+}
+
+.pricing-card.featured {
+  border-color: #00d4aa;
+  box-shadow: 0 10px 30px rgba(0, 212, 170, 0.15);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00d4aa;
+  color: white;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.plan-header {
+  margin-bottom: 30px;
+}
+
+.plan-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a5a5a;
+  margin-bottom: 15px;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.currency {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a5a5a;
+  margin: 0 5px;
+}
+
+.period {
+  font-size: 1rem;
+  color: #666;
+}
+
+.plan-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.plan-features li {
+  padding: 8px 0;
+  color: #666;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.plan-features li:last-child {
+  border-bottom: none;
+}
+
+.plan-button {
+  width: 100%;
+  padding: 16px;
+  background: #1a5a5a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.plan-button:hover {
+  background: #134545;
+}
+
+.pricing-card.featured .plan-button {
+  background: #00d4aa;
+}
+
+.pricing-card.featured .plan-button:hover {
+  background: #00c299;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 100px 0;
+  background: #f8fafc;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-content {
+  margin-bottom: 30px;
+}
+
+.testimonial-content p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.author-info h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a5a5a;
+  margin-bottom: 5px;
+}
+
+.author-info p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1a5a5a 0%, #00d4aa 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .individual-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 80px 20px 60px 20px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-content {
+    padding: 0 20px 40px 20px;
+  }
+
+  .features-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .features-text {
+    padding-right: 0;
+  }
+
+  .hero-buttons,
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 200px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .download-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
