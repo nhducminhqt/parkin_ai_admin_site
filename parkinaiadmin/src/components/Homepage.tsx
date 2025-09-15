@@ -70,7 +70,7 @@ const Homepage: React.FC = () => {
       {/* How to Pay for Parking Section */}
       <section className="howtopay-parking">
         <div className="container">
-          <div className="section-title">
+          <div className="homepage-section-title">
             <h3 className="main-title">How to Pay for Parking</h3>
             <div className="content sub-title">
               <p>
@@ -167,9 +167,9 @@ const Homepage: React.FC = () => {
       {/* Most Popular Services Section */}
       <section className="most-popular-services">
         <div className="container">
-          <div className="section-title">
-            <h3 className="main-title">Explore Our Most Popular Services</h3>
-            <p className="sub-title">
+          <div className="homepage-section-title">
+            <h4 className="main-title">Explore Our Most Popular Services</h4>
+            <p className="content sub-title">
               Unlock convenience and flexibility with Parkin top services.
               Explore seamless options tailored for your ultimate parking ease.
             </p>
@@ -290,15 +290,15 @@ const Homepage: React.FC = () => {
         </div>
       </section>
       {/* Discover the Key to Stress-Free Parking Section */}
-      <div className="discover-the-key-inner-view">
-        <div className="section-title">
+      <div className="homepage-discover-the-key-inner-view">
+        <div className="homepage-section-title">
           <h3 className="main-title">
             Discover the Key to Stress-Free Parking!
           </h3>
         </div>
-        <div className="discover-the-key-list">
-          <div className="discover-the-key-card">
-            <div className="discover-the-key-card-icon">
+        <div className="homepage-discover-the-key-list">
+          <div className="homepage-discover-the-key-card">
+            <div className="homepage-discover-the-key-card-icon">
               <img
                 alt="Seamless Experience"
                 title="Seamless Experience"
@@ -313,8 +313,8 @@ const Homepage: React.FC = () => {
             <h4>Seamless Experience</h4>
             <p>Enjoy hassle-free parking with Parkin's intuitive solutions.</p>
           </div>
-          <div className="discover-the-key-card">
-            <div className="discover-the-key-card-icon">
+          <div className="homepage-discover-the-key-card">
+            <div className="homepage-discover-the-key-card-icon">
               <img
                 alt="Effortless Transactions"
                 title="Effortless Transactions"
@@ -332,8 +332,8 @@ const Homepage: React.FC = () => {
               subscription, with Parkin user-friendly platform.
             </p>
           </div>
-          <div className="discover-the-key-card">
-            <div className="discover-the-key-card-icon">
+          <div className="homepage-discover-the-key-card">
+            <div className="homepage-discover-the-key-card-icon">
               <img
                 alt="24/7 Customer Support"
                 title="24/7 Customer Support"
@@ -395,7 +395,7 @@ const Homepage: React.FC = () => {
       {/* Parking Convenience Section */}
       <section className="parking-convenience">
         <div className="container">
-          <div className="section-title">
+          <div className="homepage-section-title">
             <h3 className="main-title">
               Personalised Features for the Ultimate Parking Convenience
             </h3>

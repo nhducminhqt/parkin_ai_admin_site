@@ -6,6 +6,7 @@ import AdminParkinOrder from "./AdminParkinOrder";
 import AdminServiceOrder from "./AdminServiceOrder";
 import AdminParkinLot from "./AdminParkinLot";
 import AdminDashboard from "./AdminDashboard";
+import AdminParkingLotReview from "./AdminParkingLotReview";
 import "../css/home.css";
 
 const Home: React.FC = () => {
@@ -89,6 +90,14 @@ const Home: React.FC = () => {
         >
           Parkin Lot
         </button>
+        <button
+          className={`home-sidebar-btn${
+            selectedMenu === "review" ? " selected" : ""
+          }`}
+          onClick={() => setSelectedMenu("review")}
+        >
+          Review
+        </button>
         {username && (
           <button
             onClick={handleLogout}
@@ -108,6 +117,7 @@ const Home: React.FC = () => {
         {selectedMenu === "parkinOrder" && <AdminParkinOrder />}
         {selectedMenu === "serviceOrder" && <AdminServiceOrder />}
         {selectedMenu === "parkinLot" && <AdminParkinLot />}
+        {selectedMenu === "review" && <AdminParkingLotReview />}
       </div>
     </div>
   );

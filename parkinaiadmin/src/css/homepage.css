@@ -199,6 +199,10 @@
   font-size: 18px;
   color: #555;
 }
+.homepage-section-title .sub-title {
+  font-size: 14px;
+  color: #666;
+}
 .howtopay-parking-listing {
   display: flex;
   justify-content: center;
@@ -253,6 +257,10 @@
   font-size: 16px;
   color: #444;
 }
+.content.sub-title {
+  font-size: 14px;
+  color: #666;
+}
 .theme-button-border {
   margin: 0 20px 20px 20px;
   padding: 10px 0;
@@ -287,27 +295,27 @@
 }
 
 /* Discover the Key to Stress-Free Parking Section */
-.discover-the-key-inner-view {
+.homepage-discover-the-key-inner-view {
   background: #f2fcff;
   padding: 48px 0 32px 0;
 }
-.discover-the-key-inner-view .section-title {
+.homepage-discover-the-key-inner-view .section-title {
   text-align: center;
   margin-bottom: 32px;
 }
-.discover-the-key-inner-view .main-title {
+.homepage-discover-the-key-inner-view .main-title {
   font-size: 30px;
   font-weight: 700;
   color: #005060;
   margin-bottom: 12px;
 }
-.discover-the-key-list {
+.homepage-discover-the-key-list {
   display: flex;
   justify-content: center;
   gap: 32px;
   flex-wrap: wrap;
 }
-.discover-the-key-card {
+.homepage-discover-the-key-card {
   background: #f8f9fa;
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(0, 80, 96, 0.08);
@@ -318,7 +326,7 @@
   align-items: center;
   text-align: center;
 }
-.discover-the-key-card-icon {
+.homepage-discover-the-key-card-icon {
   width: 56px;
   height: 56px;
   background: #e0f7fa;
@@ -328,27 +336,27 @@
   justify-content: center;
   margin-bottom: 18px;
 }
-.discover-the-key-card-icon img {
+.homepage-discover-the-key-card-icon img {
   width: 32px;
   height: 32px;
   object-fit: contain;
 }
-.discover-the-key-card h4 {
+.homepage-discover-the-key-card h4 {
   font-size: 20px;
   font-weight: 700;
   color: #005060;
   margin-bottom: 10px;
 }
-.discover-the-key-card p {
+.homepage-discover-the-key-card p {
   font-size: 16px;
   color: #444;
   margin-bottom: 0;
 }
 @media (max-width: 900px) {
-  .discover-the-key-list {
+  .homepage-discover-the-key-list {
     gap: 16px;
   }
-  .discover-the-key-card {
+  .homepage-discover-the-key-card {
     width: 100%;
     min-width: 220px;
     max-width: 100%;
