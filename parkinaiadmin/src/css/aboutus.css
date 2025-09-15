@@ -8,7 +8,15 @@
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #1a5a5a 0%, #00d4aa 100%);
+  background: linear-gradient(
+      135deg,
+      rgba(26, 90, 90, 0.8) 0%,
+      rgba(0, 212, 170, 0.8) 100%
+    ),
+    url("https://i.pinimg.com/736x/67/e0/76/67e0767fd3e7f13192012958cfaddcc9.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 100px 0 80px 0;
   text-align: center;
@@ -121,12 +129,12 @@
 
 .mission-card,
 .vision-card {
-  background: white;
-  padding: 40px;
+  position: relative;
   border-radius: 16px;
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 400px;
 }
 
 .mission-card:hover,
@@ -135,17 +143,56 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1a5a5a;
-  margin-bottom: 20px;
+.mission-image,
+.vision-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.card-text {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.7;
+.mission-image img,
+.vision-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mission-overlay,
+.vision-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 90, 90, 0.8) 0%,
+    rgba(0, 212, 170, 0.6) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  color: white;
+}
+
+.mission-overlay .card-title,
+.vision-overlay .card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.mission-overlay .card-text,
+.vision-overlay .card-text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  text-align: left;
+  max-width: 300px;
 }
 
 /* Values Section */
@@ -164,12 +211,57 @@
 .value-item {
   text-align: center;
   padding: 30px 20px;
+  transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
 }
 
 .value-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  filter: grayscale(20%);
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 90, 90, 0.1) 0%,
+    rgba(0, 212, 170, 0.1) 100%
+  );
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.value-icon:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 90, 90, 0.2) 0%,
+    rgba(0, 212, 170, 0.2) 100%
+  );
+  transform: scale(1.1);
+}
+
+.value-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.innovation-icon:hover svg path {
+  fill: #00c299 !important;
+}
+
+.trust-icon:hover svg path {
+  fill: #00c299 !important;
+}
+
+.sustainability-icon:hover svg path {
+  fill: #00c299 !important;
+}
+
+.efficiency-icon:hover svg path {
+  fill: #00c299 !important;
 }
 
 .value-title {
@@ -368,6 +460,21 @@
 
   .mission-grid {
     grid-template-columns: 1fr;
+  }
+
+  .mission-card,
+  .vision-card {
+    height: 300px;
+  }
+
+  .mission-overlay .card-title,
+  .vision-overlay .card-title {
+    font-size: 1.5rem;
+  }
+
+  .mission-overlay .card-text,
+  .vision-overlay .card-text {
+    font-size: 1rem;
   }
 
   .values-grid {
