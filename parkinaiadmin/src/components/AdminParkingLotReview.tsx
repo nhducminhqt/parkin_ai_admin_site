@@ -223,13 +223,11 @@ const AdminParkingLotReview: React.FC = () => {
                 <td>
                   <div className="lot-info">
                     <strong>{review.lot_name}</strong>
-                    <small>ID: {review.lot_id}</small>
                   </div>
                 </td>
                 <td>
                   <div className="user-info">
                     <strong>{review.username}</strong>
-                    <small>ID: {review.user_id}</small>
                   </div>
                 </td>
                 <td>
