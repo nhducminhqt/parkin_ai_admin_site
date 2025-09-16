@@ -17,9 +17,6 @@ const Individual: React.FC = () => {
             <button className="btn-secondary">Learn More</button>
           </div>
         </div>
-        <div className="hero-image">
-          <img src="/individual-hero.jpg" alt="Individual parking services" />
-        </div>
       </section>
 
       {/* Services Overview */}
@@ -97,12 +94,11 @@ const Individual: React.FC = () => {
       {/* App Features */}
       <section className="app-features">
         <div className="container">
+          <div>
+            <h2 className="section-title">Parkin Mobile App</h2>
+          </div>
           <div className="features-content">
             <div className="features-text">
-              <h2 className="section-title">Parkin Mobile App</h2>
-              <p className="section-subtitle">
-                Everything you need for stress-free parking in one powerful app
-              </p>
               <div className="feature-list">
                 <div className="feature-item">
                   <div className="feature-check">✓</div>
@@ -160,7 +156,18 @@ const Individual: React.FC = () => {
               </div>
             </div>
             <div className="features-image">
-              <img src="/app-mockup.png" alt="Parkin Mobile App" />
+              <div className="mobile-images">
+                <img
+                  src="/mobile.png"
+                  alt="Parkin Mobile App"
+                  className="mobile-img-1"
+                />
+                <img
+                  src="/mobile3.png"
+                  alt="Parkin Mobile App Features"
+                  className="mobile-img-2"
+                />
+              </div>
             </div>
           </div>
         </div>
