@@ -249,18 +249,18 @@ const AboutUs: React.FC = () => (
     </section>
 
     {/* CTA Section */}
-    <section className="cta-section">
+    <section className="aboutus-cta-section">
       <div className="container">
-        <h2 className="cta-title">
+        <h2 className="aboutus-cta-title">
           Ready to Transform Your Parking Experience?
         </h2>
-        <p className="cta-text">
+        <p className="aboutus-cta-text">
           Join thousands of drivers who have already discovered the future of
           parking
         </p>
-        <div className="cta-buttons">
-          <button className="cta-btn primary">Download App</button>
-          <button className="cta-btn secondary">Contact Us</button>
+        <div className="aboutus-cta-buttons">
+          <button className="aboutus-cta-btn primary">Download App</button>
+          <button className="aboutus-cta-btn secondary">Contact Us</button>
         </div>
       </div>
     </section>
