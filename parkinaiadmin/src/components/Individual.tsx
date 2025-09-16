@@ -155,8 +155,8 @@ const Individual: React.FC = () => {
                 </button>
               </div>
             </div>
-            <div className="features-image">
-              <div className="mobile-images">
+            <div className="features-images-app">
+              <div className="mobile-images-app">
                 <img
                   src="/mobile.png"
                   alt="Parkin Mobile App"
@@ -176,7 +176,7 @@ const Individual: React.FC = () => {
       {/* Pricing Plans */}
       <section className="pricing-section">
         <div className="container">
-          <h2 className="section-title">Choose Your Plan</h2>
+          <h2 className="section-title">Coming Soon Plan</h2>
           <p className="section-subtitle">
             Flexible pricing options to suit your parking frequency and budget
           </p>
@@ -259,7 +259,7 @@ const Individual: React.FC = () => {
                 </p>
               </div>
               <div className="testimonial-author">
-                <img src="/user1.jpg" alt="Sarah M." />
+                <img src="/avatar.jpg" alt="Sarah M." />
                 <div className="author-info">
                   <h4>Sarah M.</h4>
                   <p>Daily Commuter</p>
@@ -274,7 +274,7 @@ const Individual: React.FC = () => {
                 </p>
               </div>
               <div className="testimonial-author">
-                <img src="/user2.jpg" alt="James L." />
+                <img src="/avatar.jpg" alt="James L." />
                 <div className="author-info">
                   <h4>James L.</h4>
                   <p>Business Professional</p>
@@ -289,7 +289,7 @@ const Individual: React.FC = () => {
                 </p>
               </div>
               <div className="testimonial-author">
-                <img src="/user3.jpg" alt="Maria R." />
+                <img src="/avatar.jpg" alt="Maria R." />
                 <div className="author-info">
                   <h4>Maria R.</h4>
                   <p>Weekend Shopper</p>
