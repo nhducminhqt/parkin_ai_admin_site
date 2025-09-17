@@ -112,7 +112,53 @@ const AdminDashboard: React.FC = () => {
   if (loading) {
     return (
       <div className="dashboard-container">
-        <div className="dashboard-loading">Loading dashboard data...</div>
+        <div className="dashboard-loading-wrapper">
+          <div className="loading-spinner">
+            <div className="spinner-ring"></div>
+            <div className="spinner-ring"></div>
+            <div className="spinner-ring"></div>
+          </div>
+          <div className="loading-text">Loading dashboard data...</div>
+        </div>
+
+        {/* Skeleton Loading */}
+        <div className="dashboard-skeleton">
+          <div className="skeleton-header">
+            <div className="skeleton-line skeleton-title"></div>
+            <div className="skeleton-line skeleton-subtitle"></div>
+          </div>
+
+          <div className="skeleton-date-picker">
+            <div className="skeleton-date-group">
+              <div className="skeleton-line skeleton-label"></div>
+              <div className="skeleton-line skeleton-input"></div>
+            </div>
+            <div className="skeleton-date-group">
+              <div className="skeleton-line skeleton-label"></div>
+              <div className="skeleton-line skeleton-input"></div>
+            </div>
+          </div>
+
+          <div className="skeleton-stats">
+            {[1, 2, 3, 4].map((item) => (
+              <div key={item} className="skeleton-stat-card">
+                <div className="skeleton-line skeleton-stat-title"></div>
+                <div className="skeleton-line skeleton-stat-value"></div>
+              </div>
+            ))}
+          </div>
+
+          <div className="skeleton-charts">
+            <div className="skeleton-chart">
+              <div className="skeleton-line skeleton-chart-title"></div>
+              <div className="skeleton-chart-body"></div>
+            </div>
+            <div className="skeleton-chart">
+              <div className="skeleton-line skeleton-chart-title"></div>
+              <div className="skeleton-chart-body"></div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -126,7 +172,7 @@ const AdminDashboard: React.FC = () => {
   }
 
   return (
-    <div className="dashboard-container">
+    <div className="dashboard-container dashboard-fade-in">
       <h2 className="dashboard-title">Dashboard Overview</h2>
 
       {/* Date Range Picker */}

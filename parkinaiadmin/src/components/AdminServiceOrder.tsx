@@ -243,7 +243,7 @@ const AdminServiceOrder: React.FC = () => {
         <div className="admin-stats">
           <div className="stat-card">
             <h3>Total Service Orders</h3>
-            <p className="stat-number">{total}</p>
+            <p className="stat-number-1">{total}</p>
           </div>
         </div>
       </div>
