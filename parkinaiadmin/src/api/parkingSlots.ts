@@ -25,15 +25,70 @@ const getAuthHeaders = () => {
   };
 };
 
+// Test function to check backend connectivity
+export const testBackendConnection = async () => {
+  try {
+    console.log("Testing backend connection...");
+
+    // Test 1: Check if backend is running
+    const testUrl = `${API_BASE_URL.replace("/backend/parkin/v1", "")}/health`;
+    console.log("Testing health endpoint:", testUrl);
+
+    try {
+      const healthResponse = await fetch(testUrl);
+      console.log("Health check status:", healthResponse.status);
+    } catch (err) {
+      console.log("Health endpoint not available:", err);
+    }
+
+    // Test 2: Try different possible endpoints
+    const possibleEndpoints = [
+      "/parking-slots",
+      "/slots",
+      "/parking",
+      "/parkin-slots",
+      "/parking-lot",
+      "/lots",
+    ];
+
+    for (const endpoint of possibleEndpoints) {
+      try {
+        const testResponse = await fetch(`${API_BASE_URL}${endpoint}`, {
+          method: "GET",
+          headers: getAuthHeaders(),
+        });
+        console.log(`Endpoint ${endpoint}: ${testResponse.status}`);
+        if (testResponse.ok) {
+          console.log(`✅ Found working endpoint: ${endpoint}`);
+          break;
+        }
+      } catch (err) {
+        console.log(`❌ Endpoint ${endpoint} failed:`, err);
+      }
+    }
+  } catch (error) {
+    console.error("Backend connection test failed:", error);
+  }
+};
+
 export const fetchParkingSlots = async (): Promise<ParkingSlotsResponse> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/parking-slots`, {
+    const url = `${API_BASE_URL}/parking-slots`;
+    console.log("Fetching parking slots from:", url);
+    console.log("Auth headers:", getAuthHeaders());
+
+    const response = await fetch(url, {
       method: "GET",
       headers: getAuthHeaders(),
     });
 
+    console.log("Response status:", response.status);
+    console.log("Response ok:", response.ok);
+
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorText = await response.text();
+      console.error("Error response:", errorText);
+      throw new Error(`HTTP error! status: ${response.status} - ${errorText}`);
     }
 
     const data = await response.json();

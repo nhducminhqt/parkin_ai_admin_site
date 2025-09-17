@@ -4,6 +4,7 @@ import {
   updateParkingSlot,
   createParkingSlot,
   deleteParkingSlot,
+  testBackendConnection,
   ParkingSlot,
   ParkingSlotsResponse,
 } from "../api/parkingSlots";
@@ -180,6 +181,12 @@ const AdminParkinLot: React.FC = () => {
             onClick={() => setShowCreateForm(true)}
           >
             Add New Slot
+          </button>
+          <button
+            className="admin-btn admin-btn-secondary"
+            onClick={testBackendConnection}
+          >
+            🔍 Test Backend
           </button>
         </div>
       </div>
