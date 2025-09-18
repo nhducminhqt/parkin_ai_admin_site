@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../css/header.css";
+import MobileMenu from "./MobileMenu";
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -66,9 +67,10 @@ const Header: React.FC = () => {
             </nav>
           </div>
           <div className="menu-section">
-            <Link to="/login" onClick={handleNavClick}>
+            <Link to="/login" onClick={handleNavClick} className="desktop-only">
               <button className="header-login-btn">Login</button>
             </Link>
+            <MobileMenu />
           </div>
         </div>
       </div>

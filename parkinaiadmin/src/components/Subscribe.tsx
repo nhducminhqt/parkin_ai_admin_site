@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../css/Investor.css";
+import "../css/mobile-responsive.css";
+import "../css/subscribe-mobile.css";
 
 const Subscribe: React.FC = () => {
   const [email, setEmail] = useState("");
