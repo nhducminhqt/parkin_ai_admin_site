@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../css/homepage.css";
+import Chatbot from "./Chatbot";
 
 const bannerSlides = [
   {
@@ -503,6 +504,8 @@ const Homepage: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* Add Chatbot at the end */}
+      <Chatbot />
     </div>
   );
 };
